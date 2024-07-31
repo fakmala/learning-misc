@@ -14,4 +14,8 @@ touch App.css App.js index.css index.js
 ## BONUS: Using a single command, create a new directory inside of src called components, and inside of that new components directory create a new directory called Navbar.   Do this using a single command, without first creating the components directory.
 mkdir -p /components/Navbar
 
-## additional notes: remove folders with rm -rf [folder name]
+## additional notes: 
+# remove folders 
+rm -rf [folder name]
+# show directory structure
+ls -R [directory]
