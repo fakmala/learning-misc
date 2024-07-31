@@ -1,0 +1,63 @@
+### prep
+## download file from notion:
+# download file on gui browser, open downloads list (ctrl+j), right click on file then choose copy download link
+wget --no-check-certificate 'https://file.notion.so/f/f/e27c5d62-901a-4553-9c27-b48cbeddd84a/b8a017b0-9c62-4777-addb-da0a2db6387f/Farm.zip?id=009e944f-1ff1-47e6-8acd-be1b0e17451a&table=block&spaceId=e27c5d62-901a-4553-9c27-b48cbeddd84a&expirationTimestamp=1722492000000&signature=J8RssI1KJQ1wRg6e_532T-7Z59kJBasVQaNezpT45SY&downloadName=Farm.zip' -O Farm.zip
+## install unzip app to unzip file
+sudo apt-get install unzip
+## unzip file; locate downloaded file & cd into it. default dir: home.
+unzip Farm.zip
+###task
+##navigate to the Farm folder
+cd Farm
+## list contents of the Farm directory
+ls
+## 'move' into the Coop folder
+cd Coop
+## list contents of the Coop folder
+ls
+## 'move' into the `Chickens` folder.
+cd Chickens
+## list out the chickens in the `Chickens` folder.  how many are there?
+ls
+# there are 6 chickens in the folder: 
+## one of the chickens is very very old, which one is it? (which file in the `Chickens` folder has the oldest modification time?) Use a command to figure it out!
+ls -lt
+# output:
+-rw-r--r-- 1 root root 0 Nov 11  2021 Hippo
+-rw-r--r-- 1 root root 0 May  3  2021 Buckbeak
+-rw-r--r-- 1 root root 0 May  3  2021 Ethel
+-rw-r--r-- 1 root root 0 May  3  2021 Frida
+-rw-r--r-- 1 root root 0 May  3  2021 Jaba
+-rw-r--r-- 1 root root 0 Jan  1  1980 Elvis
+# conclusion: the oldest chicken in the coop is elvis
+## in a **single** command, move from the `Chickens` directory to the `Geese` directory.  Consult the folder structure written out above if needed.
+cd ~/Farm/Coop/Geese
+## how many geese (files) are in the `Geese` directory?
+ls
+# there are four geese: Amelia  Boris  Lucy  Muffin
+## one of the geese is sitting on a golden egg!  it's larger than the other geese. which one is it?  (which file in the `Geese` folder is the largest?).  use a command to figure it out!
+ls -lsh
+# output: 
+total 4.0K
+   0 -rw-r--r-- 1 root root  0 May  3  2021 Amelia
+   0 -rw-r--r-- 1 root root  0 May  3  2021 Boris
+   0 -rw-r--r-- 1 root root  0 May  3  2021 Lucy
+4.0K -rw-r--r-- 1 root root 15 May  3  2021 Muffin
+#conclusion: muffin is the goose sitting on the golden egg
+## navigate to the `Horses` directory.  consult the folder structure written out above, if needed.
+cd ~/Farm/Stable/Horses
+## how many horses are in the `Horses` directory?
+ls
+# there are 4 horses: Archer  Buttons  Cookie  Jett
+## wait! there is a hidden horse in the `Horses` directory! what is it's name??
+ls -a
+# output: .  ..  Archer  Buttons  Cookie  Jett  .Troy
+# conclusion: the hidden horse's name is `.Troy`
+## Bonus: List out the contents of the Horses directory as a comma separated list.  You'll need to dig into the man pages to find the correct option.  Perhaps search the ls man page for "comma"?
+# look up the option on manual
+man ls
+/comma
+q
+# found it; --format=commas or -m
+ls -m
+# output: Archer, Buttons, Cookie, Jett
