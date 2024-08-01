@@ -1,0 +1,49 @@
+####prep
+## download the file
+wget --no-check-certificate 'https://file.notion.so/f/f/e27c5d62-901a-4553-9c27-b48cbeddd84a/cc6ee08f-2e6f-4fe9-b8f4-98ba8d963c6b/NanoExercise.zip?table=block&id=68b6176c-823f-4daa-8967-a9f0fa367e95&spaceId=e27c5d62-901a-4553-9c27-b48cbeddd84a&expirationTimestamp=1722578400000&signature=95bKHG4uX7tTf9-oHR6FJA6tRIKpaCUyNGRGMX4oRCY&downloadName=NanoExercise.zip' -O NanoExercise.zip
+unzip NanoExercise.zip
+
+#### task
+### Part 1
+## 1. Open up the `recipe.txt` file using `nano`
+nano NanoExercise/recipe/txt
+## 2. On line 3, add your own name after `Author:` so that it says `Author: Stevie Wonder` or whatever your name is
+[added]
+3. Whoever wrote this recipe didn't know how to spell "parmesan", so instead they wrote "parm".  Please update the two instances of "Parm" to "Parmesan".  You can do this manually or by using nano's replace feature.
+^\
+parm
+parmesan
+a
+## 4. Write out your changes! Close the file.
+^o
+^x
+
+### Part 2
+## 1. Open up the `website.html` file with `nano`
+nano/website.html
+## 2. This html file contains a simple website for a fictional restaurant called "Ristorante Colt".  You recently purchased the restaurant and have decided to change its name! Please replace all instance of "Ristorante Colt" with your new restaurant's name.  Do this using a nano shortcut, rather than manually replacing each one.
+^\
+colt
+bleep
+a
+## 3. Save your changes and close the file!
+^s
+^x
+
+### Part 3
+## 1. The `country-data.json` file contains a large country dataset, with over 39,000 lines of json!
+nano country-data.json
+## 2. Unfortunately, there is a typo on line **15399**.  It says "Hondras" but it should say "Honduras".  Please fix this!  Rather than scrolling for a decade, use a nano shortcut to jump to line **15399**.
+^/
+15399
+[change Honrdras into Honduras]
+## 3. **Bonus:** Figure out how to tell `nano` to open the file at exactly **15399**.
+nano +15399 country-data.json
+
+### Bonus
+## 1. The `review.txt` file contains a text review of the Cacio E Pepe recipe from `recipe.txt`
+## 2. Open up the `recipe.txt` file using `nano` and scroll to the bottom. 
+nano recipe.txt
+## 3. Using a nano shortcut we have not covered, insert the contents of `review.txt` at the bottom of `recipe.txt`.
+^r
+review.txt
