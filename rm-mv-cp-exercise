@@ -1,0 +1,56 @@
+#### Deleting, Moving & Copying Exercise
+
+### Part 1: Creating The Folders & Files
+## Before we can delete, move, or copy things...we need things! It's time to get some more practice using `touch` and `mkdir`
+## Please create a new directory somewhere on your machine called `Bootcamp`.  Inside of it, create the the folders and files indicated below:
+
+```bash
+**Bootcamp/**
+	**FallCohort/**
+		Italo.txt
+		Edgar.txt
+		Linus.txt
+		Sara.txt 
+		Silvio.txt
+		**Waitlist/**
+			Hanna.txt
+			Haris.txt
+			Netta.txt
+	**WinterCohort/**
+		Santiago.txt
+		Iris.txt
+		Naomi.txt
+```
+# create the directories & the files
+mkdir Bootcamp
+cd Bootcamp
+mkdir FallCohort WinterCohort
+cd FallCohort
+touch Italo.txt Edgar.txt Linus.txt Sara.txt Silvio.txt
+mkdir Waitlist
+cd Waitlist
+touch Hanna.txt Haris.txt Netta.txt
+cd ~/exercises/rm-mv-cp-exercise/Bootcamp/WinterCohort
+touch Santiago.txt Iris.txt Naomi.txt
+# check if theres any mistake
+ls -R ~/exercises/rm-mv-cp-exercise
+
+### Part 2:
+## 1. Sadly `Edgar` had to drop out of the course.  Delete the `Edgar.txt` file in `FallCohort`
+cd ~/exercises/rm-mv-cp-exercise/Bootcamp/
+rm FallCohort/Edgar.txt
+## 2. This means we now have space in our Fall Cohort to move someone off of the waitlist.  Please move `Netta.txt` from the `Waitlist` folder into the `FallCohort` folder.
+mv FallCohort/Waitlist/Netta.txt FallCohort
+## 3. Please delete the `Waitlist` folder and its contents
+rm -r FallCohort/Waitlist
+## 4. It turns out that I misspelled Sara.  She spells her name "Sarah" with an "h" at the end.  Please rename the `Sara.txt` file to `Sarah.txt`
+mv FallCohort/Sara.txt FallCohort/Sarah.txt
+## 5. Unfortunately Italo is having a bit of a personal emergency, and he would like to move to our WinterCohort.  Please move the `Italo.txt` file from `FallCohort` to the `WinterCohort` folder
+mv FallCohort/Italo.txt WinterCohort
+## 6. Oh no, our entire Winter Cohort had to be cancelled because of a worldwide pandemic :(   We decided to bump all of the scheduled winter students to spring. In the `Bootcamp` directory create a copy of the `WinterCohort` folder called `SpringCohort`
+cp -R WinterCohort SpringCohort
+## 7. Please rename the WinterCohort folder to `WinterCohortCANCELLED`
+mv -d WinterCohort WinterCohortCANCELLED
+## 8. Oh no! We're going out of business. Please delete the entire `Bootcamp` directory 😢
+cd ~/exercises/rm-mv-cp-exercise
+rm -r Bootcamp
