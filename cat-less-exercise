@@ -1,0 +1,41 @@
+#### prep
+wget --no-check-certificate 'https://file.notion.so/f/f/e27c5d62-901a-4553-9c27-b48cbeddd84a/8c10648f-ff91-46f3-a922-a2c4983c10d1/FilesExercise.zip?table=block&id=c64025c7-2c30-4d44-b856-61979d00affb&spaceId=e27c5d62-901a-4553-9c27-b48cbeddd84a&expirationTimestamp=1722924000000&signature=Sma4HRAv9pIHR9CmTk6NVeDU9itWiGHiLL4Z23tqEx8&downloadName=FilesExercise.zip' -O FilesExercises.zip
+unzip FilesExercises.zip
+
+
+#### tasks
+### Part 1
+## - Use a command to print out the entire contents of the `poem.txt` file. Use an option so that the output also includes line numbers.
+cat -n poem.txt
+## - That is a headache to read all at once! Read poem.txt using `less` instead.
+less poem.txt
+#    - Scroll down one line at a time
+#    - Scroll up one line at a time
+#    - Scroll down one "page" at a time
+#    - Scroll up one "page" at a time
+## - Search within less for the term "Dog".  Can you find the line that contains it?
+/Dog
+## - **BONUS:** can you run a case-insesitive search?  The poem contains both "dog" and "Dog" on separate lines.
+less -i poem.txt
+/dog
+## - Now it's time to do some research! Find the option to tell less to open with lines numbers displayed. Open `poem.txt` this way
+less -N poem.txt
+##- Then find the "command" you can type into less to go to exactly 50% of the way through the file.
+less poem.txt
+50%
+## - Use a command to find the number of **words** in `poem.txt`
+wc -w poem.txt
+## - Run a command to print out the first 4 lines of `poem.txt`
+head -4 poem.txt
+- Run a command to print out the last 8 lines of `poem.txt`
+tail -8 poem.txt
+
+### Part 2
+## - Run a command to print out the lines in `purchases.txt` in reverse order (last line printed first)
+tac purchases.txt
+## - Run a command to print out the lines in `purchases.txt`, sorted alphabetically.
+sort purchases.txt
+## - Run a command to count the number of **lines** in `purchases.txt`
+wc -l purchases.txt
+## - Run a command to print out the lines in `purchases.txt`, sorted by the price (the final column) in the dataset in REVERSE order (highest price to lowest price)
+sort -nk 3 purchases.txt
