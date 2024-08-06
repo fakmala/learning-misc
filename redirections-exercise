@@ -1,0 +1,17 @@
+#### prep
+wget --no-check-certificate 'https://file.notion.so/f/f/e27c5d62-901a-4553-9c27-b48cbeddd84a/5347afb9-a379-4ccc-a6a7-25da129f3ad0/Wildlife.zip?table=block&id=203121be-e9a7-4234-9a3a-c0d084f01a82&spaceId=e27c5d62-901a-4553-9c27-b48cbeddd84a&expirationTimestamp=1723010400000&signature=iR0rjmHj-8WipZtdPVmPcjUXy9tPDD3bIRHRa9t6LXc&downloadName=Wildlife.zip' -O Wildlife.zip
+unzip Wildlife.zip
+
+#### task
+### You are taking part in a wildlife survey in a remote portion of the Peruvian Amazon! This morning, three of your research assistants each went on transect walks where they recorded the individual species they observed.     Your (simple) job is to combine their findings into a new file that contains all the species that were observed!
+## 1. Create a new file called `all-species.txt` that contains the combined contents of `angela-survey.txt`, `nico-survey.txt`, and `juan-survey.txt`.  Do this using a single command!
+cat angela-survey.txt nico-survey.txt juan-survey.txt > all-species.txt
+## 2. The problem with the `all-species.txt` file is that it contains duplicate entries!  Use a single command to sort the lines in alphabetical order, only sorting uniques, and send the output to a new file called `sorted-animals.txt`
+sort -u all-species.txt > sorted-animals.txt
+## 3. Now, you go out for a nice morning stroll and stumble upon a large anaconda sunning itself on a log.  You should add this observation to the list of species!!
+##    1. Start by appending the current date to the end of the `sorted-animals.txt` file using a command (don't open the file manually!)
+date >> sorted-animals.txt
+##    2. Then append the text "Green Anaconda" to the end of `sorted-animals.txt`
+echo "Green Anaconda" >> sorted-animals.txt
+## 4. Run the non-existent command `ughhh` and redirect any error messages so that they are **appended** to the sorted-animals.txt file.
+ughhh 2>> sorted-animals.txt
