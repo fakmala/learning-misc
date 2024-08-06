@@ -1,0 +1,48 @@
+#### prep
+wget --no-check-certificate 'https://file.notion.so/f/f/e27c5d62-901a-4553-9c27-b48cbeddd84a/65520ea7-129d-4e78-9719-69bfbb7c66e0/PokemonExercise.zip?table=block&id=097865c5-3f2c-4e27-b1f4-13ee7721f5cb&spaceId=e27c5d62-901a-4553-9c27-b48cbeddd84a&expirationTimestamp=1723017600000&signature=SIiWrYzHtMlQ5vy1CyuIz2Orp40DmxEKQjlFJePkzAs&downloadName=PokemonExercise.zip' -O PokemonExercise.zip
+unzip PokemonExercise.zip
+
+#### task
+### Complete the following challenges using the starter files.  Make sure that you navigate to the PokemonExercise/ directory, but do NOT run any of the following commands from inside the PokeDex/ folder.  I repeat: any files that you create for the exercise should live inside of PokemonExercise/ NOT PokeDex/
+cd PokemonExercise
+### Count the number of Pokemon files in the PokeDex/ folder.  You'll need to combine commands to make this work!
+ls PokeDex/ | wc -l
+### Next, create a new single file called all-pokemon.txt in the PokemonExercise folder (NOT the PokeDex folder) that contains the LOWERCASED name of every single Pokemon file in the directory, sorted in numerical order!  The end result should look like this: 
+``1bulbasaur
+2ivysaur
+3venusaur
+4charmander
+5charmeleon
+6charizard
+7squirtle
+8wartortle
+9blastoise
+10caterpie
+11metapod
+12butterfree
+...``
+​ls PokeDex/ | tr A-Z a-z | sort -n > all-pokemon.txt
+### Now that we have this file that includes all the Pokemon in numerical order, let's print out the three pigeon-related Pokemon: pidgey, pidgeotto, and pidgeot.  Using the command-line, print out lines 16-18.  It should look like this:
+``16pidgey
+17pidgeotto
+18pidgeot``
+head -n 18 all-pokemon.txt | tail -n 3
+# possible alternative; same result, different idea (grep pidge instead of using head & tail)
+cat all-pokemon.txt | grep pidg​e
+
+### Next, up let's isolate the original 151 Pokemon.  Using a single pipeline...
+## output the first 151 lines of the all-pokemon.txt file
+head -n 151 all-pokemon.txt
+## remove all digits 0-9 from the lines (using tr )
+head -n 151 all-pokemon.txt | tr -d 0-9
+## sort the now number-less lines alphabetically
+head -n 151 all-pokemon.txt | tr -d 0-9 | sort
+## store the new result in a file called original-151.txt in PokemonExercise
+``abra
+aerodactyl
+alakazam
+...
+wigglytuff
+zapdos
+zubat``
+cat all-pokemon.txt | head -151 | tr -d 0-9 | sort > original-151.txt
